@@ -3,16 +3,15 @@
 #include <stack>
 #include "Type.h"
 
-class Calculator
-{
+class Calculator {
 public:
 	Calculator(std::string);
 	float evaluate();
 private:
 	void extract(std::string);
-	stack<std::string> operatorStack;
-	stack<double> operandStack;
-	Type evalNextType(char);
-	Type previousTargetType;
+	std::stack<std::string> operatorStack;
+	std::stack<std::string> operandStack;
+	//Type evalNextType(char);
+	//Type previousTargetType;
 };
 

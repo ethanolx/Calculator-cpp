@@ -3,7 +3,7 @@
 enum class Type {
 	OPERAND,
 	OPERATOR,
-	PARANTHESIS
+	PARENTHESIS
 };
 
 enum class OperatorType: int {

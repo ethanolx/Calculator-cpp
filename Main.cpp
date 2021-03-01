@@ -1,9 +1,9 @@
-// Calculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Main.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 #include "Stack.h"
-#include "Extractor.h"
+#include "Calculator.h"
 #include <stack>
 using namespace std;
 
@@ -11,8 +11,7 @@ int main()
 {
 	string tmp;
 	cin >> tmp;
-	Extractor e(tmp);
-	cin >> tmp;
+	Calculator e(tmp);
 	return 0;
 }
 

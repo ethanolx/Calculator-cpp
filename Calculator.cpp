@@ -4,35 +4,39 @@
 #include <string>
 #include <iostream>
 #include <stack>
+#include "Utilities.h"
+#include <stack>
 
 using namespace std;
 
 Calculator::Calculator(string seq) {
-	string stripped = replace(seq, ' ', "");
+	string stripped = Utilities::removeWhitespace(seq);
 	extract(stripped);
 };
 
 void Calculator::extract(string seq) {
+	char* ptr = nullptr;
 	for (char c : seq) {
-		cout << evalNextType(c) << endl;
+		ptr = &c;
+		string s = "";
+		switch (Utilities::getType(c)) {
+			case Type::OPERAND:
+				if (Utilities::getType(*(ptr + 1)) == Type::OPERAND) {
+					s += c;
+				}
+				else {
+					evaluate();
+				}
+				break;
+			case Type::OPERATOR:
+				break;
+			case Type::PARENTHESIS:
+				break;
+			default:
+				break;
+		}
 	}
 };
-
-
-
-Type Calculator::evalNextType(char c) {
-	switch (c) {
-	case '1':
-	case '2':
-	case '3':
-		return Type::OPERAND;
-	case '(':
-	case ')':
-		return Type::PARANTHESIS;
-	default:
-		return Type::OPERATOR;
-	}
-}
 
 float Calculator::evaluate() {
 	return 0.0f;
