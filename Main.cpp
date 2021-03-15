@@ -5,13 +5,14 @@
 #include "Stack.h"
 #include "Calculator.h"
 #include <stack>
+#include <set>
+
 using namespace std;
 
 int main()
 {
-	string tmp;
-	cin >> tmp;
-	Calculator e(tmp);
+	string tmp = "(123 + 0.5) * 4 - 7 ^ 5.9";
+	Calculator::evaluate(tmp);
 	return 0;
 }
 

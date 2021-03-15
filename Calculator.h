@@ -1,17 +1,26 @@
 #pragma once
+
+#include <unordered_map>
 #include <string>
+#include <set>
 #include <stack>
+#include <vector>
 #include "Type.h"
+#include "Utilities.h"
 
 class Calculator {
-public:
-	Calculator(std::string);
-	float evaluate();
-private:
-	void extract(std::string);
-	std::stack<std::string> operatorStack;
-	std::stack<std::string> operandStack;
-	//Type evalNextType(char);
-	//Type previousTargetType;
-};
+	Calculator();
+	static void extract(std::string);
+	static float reduce();
 
+	// Properties
+	static int currentParenthesisModifier;
+	static const int parenthesisModifier = 4;
+	static std::unordered_map<int, std::vector<int>> indexMap;
+	static std::set<int> prioritySet;
+	static std::vector<float> operandVect;
+	static std::vector<Utilities::Operation*> operationVect;
+
+public:
+	static void evaluate(std::string);
+};
