@@ -1,19 +1,23 @@
 #pragma once
 #include "Vertex.h"
-#include "Utilities.h"
 
-Vertex::Vertex(float l, float r, Utilities::Operation* op) {
+Vertex::Vertex() {
+	cls = VertexClass::LEAF;
+	left = nullptr;
+	right = nullptr;
+	value.leaf = 0;
+}
+
+Vertex::Vertex(Vertex::Operation* op) {
 	cls = VertexClass::INTERNAL;
-	left = &Vertex(l);
-	right = &Vertex(r);
+	left = nullptr;
+	right = nullptr;
 	value.interna = op;
 }
 
-Vertex::Vertex() { }
-
 Vertex::Vertex(float val) {
 	cls = VertexClass::LEAF;
-	value.leaf = val;
 	left = nullptr;
 	right = nullptr;
+	value.leaf = val;
 }

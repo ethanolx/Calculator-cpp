@@ -2,17 +2,16 @@
 //
 
 #include <iostream>
-#include "Stack.h"
 #include "Calculator.h"
-#include <stack>
-#include <set>
+#include "Utilities.h"
+#include "Vertex.h"
 
 using namespace std;
 
-int main()
-{
+int main() {
 	string tmp = "(123 + 0.5) * 4 - 7 ^ 5.9";
 	Calculator::evaluate(tmp);
+	cout << endl << endl;
 	return 0;
 }
 

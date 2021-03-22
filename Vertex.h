@@ -1,14 +1,16 @@
 #pragma once
-#include "Utilities.h"
 
 class Vertex {
 public:
-	Vertex* left;
-	Vertex* right;
+	typedef float Operation(float, float);
+
 	Vertex();
 	Vertex(float);
-	Vertex(float, float, Utilities::Operation*);
-	enum class VertexClass {INTERNAL, LEAF } cls;
-	typedef float Operation(float, float);
-	union { float leaf; Operation* interna; } value;
+	Vertex(Operation*);
+
+	Vertex* left;
+	Vertex* right;
+	
+	enum class VertexClass { INTERNAL, LEAF } cls;
+	union Value { float leaf; Operation* interna; } value;
 };

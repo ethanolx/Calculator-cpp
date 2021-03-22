@@ -5,8 +5,8 @@
 #include <set>
 #include <stack>
 #include <vector>
-#include "Type.h"
 #include "Utilities.h"
+#include "Vertex.h"
 
 class Calculator {
 	Calculator();
@@ -18,9 +18,14 @@ class Calculator {
 	static const int parenthesisModifier = 4;
 	static std::unordered_map<int, std::vector<int>> indexMap;
 	static std::set<int> prioritySet;
-	static std::vector<float> operandVect;
-	static std::vector<Utilities::Operation*> operationVect;
+	static std::vector<Vertex> operandVect;
+	static std::vector<Vertex> operationVect;
+	static Vertex* build(std::vector<int>);
+	static void transform(std::vector<Vertex>&, std::vector<Vertex>&);
+	static std::vector<int> partition(bool, int, std::vector<int>);
+	static void dfs(Vertex&);
 
 public:
-	static void evaluate(std::string);
+	static std::vector<int> flatten(std::unordered_map<int, std::vector<int>>, std::set<int>);
+	static float evaluate(std::string);
 };
