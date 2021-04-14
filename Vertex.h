@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Vh
+#define Vh
 
 class Vertex {
 public:
@@ -12,5 +13,7 @@ public:
 	Vertex* right;
 	
 	enum class VertexClass { INTERNAL, LEAF } cls;
-	union Value { float leaf; Operation* interna; } value;
+	union Value { float flt; Operation* optn; } value;
 };
+
+#endif

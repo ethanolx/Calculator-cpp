@@ -1,12 +1,12 @@
-#pragma once
-
 #include <unordered_map>
 #include <string>
 #include <set>
-#include <stack>
 #include <vector>
-#include "Utilities.h"
 #include "Vertex.h"
+#include "Utilities.h"
+
+#ifndef Ch
+#define Ch
 
 class Calculator {
 	Calculator();
@@ -29,3 +29,5 @@ public:
 	static std::vector<int> flatten(std::unordered_map<int, std::vector<int>>, std::set<int>);
 	static float evaluate(std::string);
 };
+
+#endif 

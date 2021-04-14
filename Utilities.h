@@ -1,10 +1,10 @@
-#pragma once
 #include <string>
 #include <vector>
-#include <set>
-#include <unordered_map>
-#include "Vertex.h"
 #include <iostream>
+#include "Vertex.h"
+
+#ifndef Uh
+#define Uh
 
 namespace Utilities {
 	int getPriority(char);
@@ -26,3 +26,5 @@ namespace Utilities {
 	float divide(float a, float b);
 	float exp(float a, float b);
 }
+
+#endif

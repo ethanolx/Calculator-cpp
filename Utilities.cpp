@@ -1,15 +1,14 @@
-#pragma once
+
 #include <string>
-#include <unordered_map>
 #include <iostream>
-#include "Type.h"
-#include "Utilities.h"
-#include <algorithm>
+#include <cmath>
 #include "Vertex.h"
-#include <vector>
-#include <set>
+#include "Utilities.h"
 
 using namespace std;
+
+#ifndef U
+#define U
 
 int Utilities::getPriority(char t) {
 	switch (t) {
@@ -58,3 +57,5 @@ float Utilities::divide(float a, float b) {
 float Utilities::exp(float a, float b) {
 	return pow(a, b);
 }
+
+#endif

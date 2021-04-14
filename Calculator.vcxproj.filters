@@ -29,9 +29,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Type.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Calculator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -41,5 +38,8 @@
     <ClInclude Include="Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
